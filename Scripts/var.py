@@ -8,9 +8,9 @@ import datetime as dt
 
 
 #set varibales
-app_name = "Run_PyInstaller"
-ver = "0.02.00"
-build = "02232017"
+app_name = "Net Tools"
+ver = "0.00.10"
+build = "20170513"
 
 name = app_name + " V" + ver
 
@@ -24,5 +24,7 @@ text1 = "readme.txt"
 text2 = "changelog.txt"
 
 #set system varibles
-width = 300
-lines = 300
+width = 120
+lines = 50
+
+cent_width = width-1

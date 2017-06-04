@@ -13,12 +13,6 @@ from time import sleep
 from shutil import copyfile
 from shutil import rmtree as rm_dir
 from pathlib import Path
-from bs4 import BeautifulSoup as bs
-import lxml.etree as et
-
-#from tkinter import *
-from tkinter import messagebox, Label
-from tkinter import simpledialog
 
 
 var.currdate = dt.date.today().strftime("%Y%m%d")
@@ -28,21 +22,14 @@ var.currtime = dt.datetime.now().strftime("%H%M%S")
 #checks if file exists in var.dir_temp
 def chk_file_temp(file_name):
     if not Path(var.dir_temp + "/" + file_name).is_file():
-        msg_error("T04: Check Error\nFile Not Found. \n ")   
+        print("T04: Check Error\nFile Not Found. \n ")   
         
-        
-def client_exit():
-    option = messagebox.askquestion("Exit", "Are You Sure?", icon="question")
-    if option =="yes":
-        sys.exit()
-        
-
 #copy files
 def copy(fn1,fn2):
     if os.path.isfile(fn1):
         copyfile(fn1,fn2)
     else:
-        msg_error("T03: Copy Error\nFile Doesn't Exit")
+        print("T03: Copy Error\nFile Doesn't Exit")
     
         
 #delete a directory
@@ -58,7 +45,7 @@ def delete_file(file_name):
     if os.path.isfile(file_name):
         os.remove(file_name)
     else:
-        msg_error("T02: Delete Error\nFile Doesn't Exit")
+        print("T02: Delete Error\nFile Doesn't Exit")
 
         
 #make directories as needed
@@ -78,20 +65,12 @@ def mk_log():
             "\n")
     f.close()    
     
-    
-def msg(text):
-    messagebox.showinfo(var.long_app, text)
-    
-    
-def msg_error(text):
-    messagebox.showerror(var.long_app, text)
 
-    
 #set wait command
 def pause(value):
     if value == 0:   #if 0 is entered it creates a press any key prompt.
         os.system("pause")
-    elif int(value):
+    elif float(value):
         sleep(value)
 
 
